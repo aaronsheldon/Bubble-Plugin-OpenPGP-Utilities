@@ -1,0 +1,21 @@
+{
+    "caption": "Read Message",
+    "doc": "Reads an armored OpenPGP RSA 4096 encrypted message into a promise.",
+    "fields": {
+        "ABV": {
+            "caption": "message",
+            "doc": "OpenPGP RSA 4096 message to load. An empty message will prompt the user to select a local file.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "message",
+            "rank": 1,
+            "value": "text"
+        },
+        "ABt": {
+            "caption": "Call this action before decrypting a message.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    }
+}

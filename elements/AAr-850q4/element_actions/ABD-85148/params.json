@@ -1,0 +1,21 @@
+{
+    "caption": "Read Public Key",
+    "doc": "Reads an armored OpenPGP RSA 4096 public key into a Promise.",
+    "fields": {
+        "ABE": {
+            "caption": "Public Key",
+            "doc": "Armoured RSA 4096 public key.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "publickey",
+            "rank": 1,
+            "value": "text"
+        },
+        "ABp": {
+            "caption": "Call this action before encrypting a message or verifying a signature.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    }
+}

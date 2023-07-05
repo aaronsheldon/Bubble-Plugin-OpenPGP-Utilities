@@ -1,0 +1,22 @@
+{
+    "caption": "Read Private Key",
+    "doc": "Reads an armored OpenPGP RSA 4096 symmetric passphrase encrypted private key into a promise.",
+    "fields": {
+        "ABJ": {
+            "caption": "Private Key",
+            "doc": "Armoured and symmetric passphrase encrypted RSA 4096 private key.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "privatekey",
+            "optional": false,
+            "rank": 1,
+            "value": "text"
+        },
+        "ABq": {
+            "caption": "Call this action before unlocking a private key.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    }
+}

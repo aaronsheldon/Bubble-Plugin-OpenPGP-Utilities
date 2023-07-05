@@ -1,0 +1,20 @@
+{
+    "caption": "Unlock Private Key",
+    "doc": "Unlock a private key promise with the passphrase into a promise.",
+    "fields": {
+        "ABK": {
+            "caption": "Passphrase",
+            "doc": "Symmetric passphrase to unlock the private key.",
+            "editor": "DynamicValue",
+            "name": "passphrase",
+            "rank": 1,
+            "value": "text"
+        },
+        "ABr": {
+            "caption": "Call this action before decrypting a message or signing a message.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    }
+}

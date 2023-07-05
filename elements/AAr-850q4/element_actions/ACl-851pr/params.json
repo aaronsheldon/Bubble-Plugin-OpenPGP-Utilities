@@ -1,0 +1,12 @@
+{
+    "caption": "Clear Storage",
+    "doc": "Clear the local storage.",
+    "fields": {
+        "ACm": {
+            "caption": "Synchronously clears all locally stored data.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    }
+}

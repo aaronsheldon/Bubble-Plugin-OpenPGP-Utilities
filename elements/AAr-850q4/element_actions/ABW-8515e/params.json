@@ -1,0 +1,21 @@
+{
+    "caption": "Encrypt Message",
+    "doc": "Encrypt a created message using an OpenPGP RSA 4096 public key. If a private key is present also sign the message.",
+    "fields": {
+        "ABa": {
+            "caption": "Signing Date",
+            "doc": "Use the supplied date as the signature date, instead of current date.",
+            "editor": "DynamicValue",
+            "name": "date",
+            "optional": true,
+            "rank": 1,
+            "value": "date"
+        },
+        "ABx": {
+            "caption": "This action is an endpoint providing data in the element state.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "caption": "Generate Key Pair",
+    "doc": "Generates a new OpenPGP RSA 4096 key pair.",
+    "fields": {
+        "AAu": {
+            "caption": "Name",
+            "doc": "Name to embed in the key pair.",
+            "editor": "DynamicValue",
+            "name": "name",
+            "rank": 1,
+            "value": "text"
+        },
+        "AAv": {
+            "caption": "Email",
+            "doc": "Email to embed in the key pair.",
+            "editor": "DynamicValue",
+            "name": "email",
+            "rank": 2,
+            "value": "text"
+        },
+        "AAw": {
+            "caption": "Passphrase",
+            "doc": "Passphrase used to encrypt the generated private key.",
+            "editor": "DynamicValue",
+            "name": "passphrase",
+            "rank": 3,
+            "value": "text"
+        },
+        "AAx": {
+            "caption": "Generation Date",
+            "doc": "Use the supplied date as the key pair generation date.",
+            "editor": "DynamicValue",
+            "name": "date",
+            "optional": true,
+            "rank": 4,
+            "value": "date"
+        },
+        "AAy": {
+            "caption": "Expires",
+            "doc": "Number of seconds from the key pair generation time after which the key pair expires.",
+            "editor": "DynamicValue",
+            "name": "expires",
+            "optional": true,
+            "rank": 5,
+            "value": "number"
+        },
+        "ABw": {
+            "caption": "This action is an endpoint providing data in the element state.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    }
+}

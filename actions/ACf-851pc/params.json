@@ -1,0 +1,47 @@
+{
+    "category": "plugins",
+    "display": "PGP Lock",
+    "fields": {
+        "ACg": {
+            "caption": "Old Passphrase",
+            "doc": "Symmetric passphrase to decrypt the private key.",
+            "editor": "DynamicValue",
+            "name": "oldpassphrase",
+            "rank": 1,
+            "value": "text"
+        },
+        "ACh": {
+            "caption": "New Passphrase",
+            "doc": "Symmetric passphrase to encrypt the private key.",
+            "editor": "DynamicValue",
+            "name": "newpassphrase",
+            "rank": 2,
+            "value": "text"
+        },
+        "ACi": {
+            "caption": "Locked Key",
+            "doc": "Armored and symmetric passphrase encrypted private key.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "lockedkey",
+            "rank": 3,
+            "value": "text"
+        },
+        "ACs": {
+            "caption": "Lock the private key with a new passphrase.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    },
+    "return_value": {
+        "ACj": {
+            "caption": "Locked Key",
+            "name": "lockedkey",
+            "rank": 0,
+            "value": "text"
+        }
+    },
+    "type": "server_side",
+    "use_packages": true
+}

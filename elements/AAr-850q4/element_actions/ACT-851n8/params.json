@@ -1,0 +1,21 @@
+{
+    "caption": "Read Signature",
+    "doc": "Read the armored OpenPGP RSA 4096 signature of a message into a promise.",
+    "fields": {
+        "ACU": {
+            "caption": "signature",
+            "doc": "Armored signature of the message.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "signature",
+            "rank": 1,
+            "value": "text"
+        },
+        "ACX": {
+            "caption": "Call this action before verifying a signature.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    }
+}

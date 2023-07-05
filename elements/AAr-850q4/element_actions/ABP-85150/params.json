@@ -1,0 +1,31 @@
+{
+    "caption": "Create Message",
+    "doc": "Create a new text message into a promise.",
+    "fields": {
+        "ABQ": {
+            "caption": "Message",
+            "doc": "Clear text message contents. An empty message will prompt the user to select a local file.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "message",
+            "optional": true,
+            "rank": 1,
+            "value": "text"
+        },
+        "ABR": {
+            "caption": "Filename",
+            "doc": "Courtesy filename of original text source.",
+            "editor": "DynamicValue",
+            "name": "filename",
+            "optional": true,
+            "rank": 2,
+            "value": "text"
+        },
+        "ABs": {
+            "caption": "Call this action before encrypting, signing, or verifying a message.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    }
+}

@@ -1,0 +1,136 @@
+{
+    "add_is_visible": false,
+    "add_large_file_upload_properties": false,
+    "category": "input forms",
+    "default_dim": {
+        "height": 32,
+        "width": 32
+    },
+    "display": "PGP Client",
+    "events": {
+        "AAz": {
+            "caption": "Pair Generated",
+            "doc": "OpenPGP RSA 4096 key pair has been generated.",
+            "name": "generated"
+        },
+        "ABF": {
+            "caption": "Public Key Read",
+            "doc": "OpenPGP RSA 4096 public key has been read into a promise.",
+            "name": "publickeyread"
+        },
+        "ABL": {
+            "caption": "Private Key Read",
+            "doc": "OpenPGP RSA 4096 symmetric passphrase encrypted private key has been read into a promise.",
+            "name": "privatekeyread"
+        },
+        "ABM": {
+            "caption": "Private Key Unlocked",
+            "doc": "OpenPGP RSA 4094 symmetric passphrase encrypted private key has been unlocked into a promise.",
+            "name": "privatekeyunlocked"
+        },
+        "ABS": {
+            "caption": "Message Created",
+            "doc": "Message has been created into a promise.",
+            "name": "messagecreated"
+        },
+        "ABU": {
+            "caption": "Message Read",
+            "doc": "OpenPGP RSA 4096 encrypted message has been read into a promise.",
+            "name": "messageread"
+        },
+        "ABY": {
+            "caption": "Message Encrypted",
+            "doc": "Message has been OpenPGP RSA 4096 encrypted.",
+            "name": "messageencrypted"
+        },
+        "ABZ": {
+            "caption": "Message Decrypted",
+            "doc": "OpenPGP RSA 4096 encrypted message has been decrypted.",
+            "name": "messagedecrypted"
+        },
+        "ABc": {
+            "caption": "Message Signed",
+            "doc": "Clear text message has been signed with an OpenPGP RSA 4096 private key.",
+            "name": "messagesigned"
+        },
+        "ABd": {
+            "caption": "Message Verification",
+            "doc": "Clear text message verification with an OpenPGP RSA 4096 public key.",
+            "name": "messageverification"
+        },
+        "ACV": {
+            "caption": "Signature Read",
+            "doc": "Armored OpenPGP RSA 4096 signature of message has been read into a promise.",
+            "name": "signatureread"
+        },
+        "ACZ": {
+            "caption": "Action Failed",
+            "doc": "An error occurred while executing an action. Has the action been called with the correct dependencies?",
+            "name": "actionfailed"
+        },
+        "ACa": {
+            "caption": "File Selected",
+            "doc": "Filename available of the file selected to be read into a promise.",
+            "name": "fileselected"
+        },
+        "ACe": {
+            "caption": "Private Key Locked",
+            "doc": "OpenPGP RSA 4094 private key locked with a symmetric passphrase.",
+            "name": "privatekeylocked"
+        },
+        "ACk": {
+            "caption": "Storage Cleared",
+            "doc": "Local storage of the element cleared.",
+            "name": "storagecleared"
+        }
+    },
+    "has_reset_fn": false,
+    "icon": "ion-android-unlock",
+    "states": {
+        "ABA": {
+            "caption": "Public Key",
+            "doc": "Armoured OpenPGP RSA 4096 public key.",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n    \n    // Empty\n\treturn null;\n}"
+            },
+            "name": "publickey",
+            "value": "text"
+        },
+        "ABB": {
+            "caption": "Private Key",
+            "doc": "Armoured and symmetric passphrase encrypted OpenPGP RSA 4096 private key",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n    \n    // Empty\n\treturn null;\n}"
+            },
+            "name": "privatekey",
+            "value": "text"
+        },
+        "ABN": {
+            "caption": "Message or Signature",
+            "doc": "Resulting clear text, armored OpenPGP RSA 4096 encrypted text, or armored OpenPGP RSA 4096 signature.",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n    \n    // Empty\n    return null;\n}"
+            },
+            "name": "message",
+            "value": "text"
+        },
+        "ABO": {
+            "caption": "Verified",
+            "doc": "Verification of the signed message.",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n    \n    // Empty\n    return null;\n}"
+            },
+            "name": "verified",
+            "value": "boolean"
+        },
+        "ABb": {
+            "caption": "Filename",
+            "doc": "Courtesy filename of original message source.",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n    \n    // Empty\n    return null;\n}"
+            },
+            "name": "filename",
+            "value": "text"
+        }
+    }
+}

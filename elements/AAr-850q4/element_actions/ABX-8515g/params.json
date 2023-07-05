@@ -1,0 +1,21 @@
+{
+    "caption": "Decrypt Message",
+    "doc": "Decrypt a read message using an OpenPGP RSA 4096 private key. If a public key is present verifies the signature.",
+    "fields": {
+        "ABo": {
+            "caption": "date",
+            "doc": "Use the supplied date as the signature verification date, instead of current date.",
+            "editor": "DynamicValue",
+            "name": "date",
+            "optional": true,
+            "rank": 1,
+            "value": "date"
+        },
+        "ABy": {
+            "caption": "This action is an endpoint providing data in the element state.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    }
+}

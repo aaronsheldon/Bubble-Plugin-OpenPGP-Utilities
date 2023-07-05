@@ -1,0 +1,12 @@
+{
+    "assets": {
+        "AAs": {
+            "name": "openpgpjs.png",
+            "url": "//dd7tel2830j4w.cloudfront.net/f1645044756401x495948863728440800/icon_openpgpjs.png"
+        }
+    },
+    "dependencies": {
+        "plugin_api_version": "3",
+        "use_jquery": false
+    }
+}

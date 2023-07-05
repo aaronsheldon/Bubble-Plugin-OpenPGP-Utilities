@@ -1,0 +1,88 @@
+{
+    "category": "plugins",
+    "display": "PGP Decrypt",
+    "fields": {
+        "AAK": {
+            "caption": "Message",
+            "doc": "Sender's encrypted message.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "message",
+            "rank": 1,
+            "value": "text"
+        },
+        "AAL": {
+            "caption": "Decryption Key",
+            "doc": "Receiver's armored and symmetric passphrase encrypted private key to decrypt the message.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "decryptionkey",
+            "rank": 2,
+            "value": "text"
+        },
+        "AAM": {
+            "caption": "Passphrase",
+            "doc": "Receiver's symmetric passphrase to decrypt the private key.",
+            "editor": "DynamicValue",
+            "name": "passphrase",
+            "rank": 3,
+            "value": "text"
+        },
+        "AAN": {
+            "caption": "Verification Key",
+            "doc": "Sender's armored public key to verify the signature.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "verificationkey",
+            "optional": true,
+            "rank": 4,
+            "value": "text"
+        },
+        "AAP": {
+            "caption": "Verification Date",
+            "doc": "Use the supplied date as the signature verification date, instead of current date.",
+            "editor": "DynamicValue",
+            "name": "date",
+            "optional": true,
+            "rank": 5,
+            "value": "date"
+        },
+        "ACF": {
+            "caption": "Message Base64",
+            "doc": "Input and output message is URL safe Base64 encoded raw bytes. Otherwise input is armored text and output is clear plain text (default).",
+            "editor": "DynamicValue",
+            "name": "base64",
+            "optional": true,
+            "rank": 6,
+            "value": "boolean"
+        },
+        "ACo": {
+            "caption": "Using the private key decrypt a message encrypted with a public key.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    },
+    "return_value": {
+        "AAQ": {
+            "caption": "Message",
+            "name": "message",
+            "rank": 0,
+            "value": "text"
+        },
+        "AAR": {
+            "caption": "Verified",
+            "name": "verified",
+            "rank": 1,
+            "value": "boolean"
+        },
+        "AAq": {
+            "caption": "File Name",
+            "name": "filename",
+            "rank": 2,
+            "value": "text"
+        }
+    },
+    "type": "server_side",
+    "use_packages": true
+}

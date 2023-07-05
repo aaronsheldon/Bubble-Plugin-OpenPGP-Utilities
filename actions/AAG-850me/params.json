@@ -1,0 +1,70 @@
+{
+    "category": "plugins",
+    "display": "PGP Generate",
+    "fields": {
+        "AAa": {
+            "caption": "Name",
+            "doc": "Name to embed in the key pair.",
+            "editor": "DynamicValue",
+            "name": "name",
+            "rank": 1,
+            "value": "text"
+        },
+        "AAb": {
+            "caption": "Email",
+            "doc": "Email to embed in the key pair.",
+            "editor": "DynamicValue",
+            "name": "email",
+            "rank": 2,
+            "value": "text"
+        },
+        "AAc": {
+            "caption": "Passphrase",
+            "doc": "symmetric passphrase to decrypt the private key.",
+            "editor": "DynamicValue",
+            "name": "passphrase",
+            "rank": 3,
+            "value": "text"
+        },
+        "AAd": {
+            "caption": "Generation Date",
+            "doc": "Use the supplied date as the key pair generation date.",
+            "editor": "DynamicValue",
+            "name": "date",
+            "optional": true,
+            "rank": 4,
+            "value": "date"
+        },
+        "AAe": {
+            "caption": "Expires",
+            "doc": "Number of seconds from the key pair generation time after which the key pair expires.",
+            "editor": "DynamicValue",
+            "name": "expires",
+            "optional": true,
+            "rank": 5,
+            "value": "number"
+        },
+        "ACr": {
+            "caption": "Create a new public-private key pair.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    },
+    "return_value": {
+        "AAY": {
+            "caption": "Public Key",
+            "name": "publickey",
+            "rank": 0,
+            "value": "text"
+        },
+        "AAZ": {
+            "caption": "Private Key",
+            "name": "privatekey",
+            "rank": 1,
+            "value": "text"
+        }
+    },
+    "type": "server_side",
+    "use_packages": true
+}

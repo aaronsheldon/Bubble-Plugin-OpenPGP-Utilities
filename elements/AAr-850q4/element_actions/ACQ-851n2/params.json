@@ -1,0 +1,12 @@
+{
+    "caption": "Read File",
+    "doc": "Read the bytes of a local file into a promise.",
+    "fields": {
+        "ACY": {
+            "caption": "Call this action before creating or reading a message.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    }
+}

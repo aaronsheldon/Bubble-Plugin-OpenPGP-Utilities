@@ -1,0 +1,20 @@
+{
+    "caption": "Lock Private Key",
+    "doc": "Lock an unlocked private key promise with a new passphrase.",
+    "fields": {
+        "ACc": {
+            "caption": "This action is an endpoint providing data in the element state.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        },
+        "ACd": {
+            "caption": "passphrase",
+            "doc": "Passphrase used to encrypt the unlocked private key.",
+            "editor": "DynamicValue",
+            "name": "passphrase",
+            "rank": 1,
+            "value": "text"
+        }
+    }
+}

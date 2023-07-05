@@ -1,0 +1,21 @@
+{
+    "caption": "Sign Message",
+    "doc": "Sign a clear text message with an OpenPGP RSA 4096 private key.",
+    "fields": {
+        "ABn": {
+            "caption": "date",
+            "doc": "Override the creation date of the signature.",
+            "editor": "DynamicValue",
+            "name": "date",
+            "optional": true,
+            "rank": 1,
+            "value": "date"
+        },
+        "ABz": {
+            "caption": "This action is an endpoint providing data in the element state.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    }
+}

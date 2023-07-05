@@ -1,0 +1,86 @@
+{
+    "category": "plugins",
+    "display": "PGP Encrypt",
+    "fields": {
+        "AAT": {
+            "caption": "message",
+            "doc": "Sender's bare message.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "message",
+            "rank": 1,
+            "value": "text"
+        },
+        "AAU": {
+            "caption": "Encryption Key",
+            "doc": "Receiver's armored public key to encrypt the message.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "encryptionkey",
+            "rank": 2,
+            "value": "text"
+        },
+        "AAV": {
+            "caption": "Signing Key",
+            "doc": "Sender's armored and symmetric passphrase encrypted private key to sign the message.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "signingkey",
+            "optional": true,
+            "rank": 3,
+            "value": "text"
+        },
+        "AAW": {
+            "caption": "Passphrase",
+            "doc": "Sender's symmetric passphrase to decrypt the private key.",
+            "editor": "DynamicValue",
+            "name": "passphrase",
+            "optional": true,
+            "rank": 4,
+            "value": "text"
+        },
+        "AAX": {
+            "caption": "Signing Date",
+            "doc": "Use the supplied date as the encryption date, instead of current date.",
+            "editor": "DynamicValue",
+            "name": "date",
+            "optional": true,
+            "rank": 5,
+            "value": "date"
+        },
+        "AAp": {
+            "caption": "File Name",
+            "doc": "Sender's name of original message file to send to receiver.",
+            "editor": "DynamicValue",
+            "name": "filename",
+            "optional": true,
+            "rank": 6,
+            "value": "text"
+        },
+        "ACE": {
+            "caption": "Message Base64",
+            "doc": "Input and output message is URL safe Base64 encoded raw bytes. Otherwise input is clear plain text and output is armored text (default).",
+            "editor": "DynamicValue",
+            "name": "base64",
+            "optional": true,
+            "rank": 7,
+            "value": "boolean"
+        },
+        "ACn": {
+            "caption": "Encrypt a message with a public key.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    },
+    "return_value": {
+        "AAJ": {
+            "caption": "Message",
+            "name": "message",
+            "rank": 0,
+            "value": "text"
+        }
+    },
+    "type": "server_side",
+    "use_packages": true
+}

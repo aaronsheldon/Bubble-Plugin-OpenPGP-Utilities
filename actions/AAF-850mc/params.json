@@ -1,0 +1,67 @@
+{
+    "category": "plugins",
+    "display": "PGP Verify",
+    "fields": {
+        "AAg": {
+            "caption": "message",
+            "doc": "Receiver's message.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "message",
+            "rank": 1,
+            "value": "text"
+        },
+        "AAh": {
+            "caption": "Verification Key",
+            "doc": "Sender's armored public key to verify the signature.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "verificationkey",
+            "rank": 3,
+            "value": "text"
+        },
+        "AAi": {
+            "caption": "Verification Date",
+            "doc": "Use the supplied date as the signature verification date, instead of current date.",
+            "editor": "DynamicValue",
+            "name": "date",
+            "optional": true,
+            "rank": 4,
+            "value": "date"
+        },
+        "ACJ": {
+            "caption": "Message Base64",
+            "doc": "Message is URL safe Base64 encoded raw bytes. Otherwise input and output are clear plain text (default).",
+            "editor": "DynamicValue",
+            "name": "base64",
+            "optional": true,
+            "rank": 5,
+            "value": "boolean"
+        },
+        "ACS": {
+            "caption": "Signature",
+            "doc": "Sender's armored signature of message.",
+            "editor": "DynamicValue",
+            "long_text": true,
+            "name": "signature",
+            "rank": 2,
+            "value": "text"
+        },
+        "ACq": {
+            "caption": "Verify a message signed by a single private key with the corresponding public key.",
+            "editor": "Label",
+            "name": "hint",
+            "rank": 0
+        }
+    },
+    "return_value": {
+        "AAf": {
+            "caption": "Verified",
+            "name": "verified",
+            "rank": 0,
+            "value": "boolean"
+        }
+    },
+    "type": "server_side",
+    "use_packages": true
+}

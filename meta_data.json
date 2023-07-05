@@ -1,0 +1,15 @@
+{
+    "categories": {
+        "0": "technical",
+        "1": "compliance",
+        "2": "data (things)"
+    },
+    "demo_page": "https://littlelambdas.com/openpgpjs",
+    "description": "Thin wrapper around the OpenPGPJS NodeJS module. Exposes actions to generate public-private key pairs, sign, verify, encrypt, and decrypt messages. Restricted to RSA 4096 keys, and single detached signatures only.\n\nThe client side element uses implicit Promise chaining between actions. Each action raises an event on the creation of its corresponding Promise, allowing for subsequent actions to be safely called even if the Promise has not yet resolved.\n\nFile encryption, decryption, signing, and verifying is handled directly through native file prompts when using the client-side element. On the server-side raw bytes are handled by passing and returning an intermediary URL safe Base64 encoded values.",
+    "image": "//s3.amazonaws.com/appforest_uf/f1639436226863x154948064249167400/icon_openpgpjs.png",
+    "license": "open_source",
+    "link": "https://openpgpjs.org/",
+    "name": "OpenPGP Utilities",
+    "plugin_instructions": "The OpenPGP Utilities plugin provides the following client-side browser element actions:\n\n\"Generate Keys\" create a new public-private key pair.\n\n\"Read Public Key\" read an armored public key into a promise.\n\n\"Read Private Key\" read an armored and symmetric passphrase encrypted private key into a promise.\n\n\"Unlock Private Key\" unlock the private key promise into a promise.\n\n\"Create Message\" read a new message into a promise.\n\n\"Read Message\" read an encrypted message into a promise.\n\n\"Encrypt Message\" encrypt the clear text promise into a promise using the public key promise. When a private key promise is present it will additionally sign the message.\n\n\"Decrypt Message\" decrypt the encrypted text promise. When a public key promise is present it will additionally verify the message.\n\n\"Sign Message\" sign the message promise using the private key promise.\n\n\"Verify Message\" verify the message promise using the public key promise.\n\n\"Read File\" read the bytes of a file into a promise.\n\n\"Read Signature\" read a message signature into a promise.\n\n\"Lock Private Key\" lock the unlocked private key promise with a new passphrase.\n\nThe OpenPGP Utilities plugin provides the following server-side actions:\n\n\"PGP Encrypt\" encrypt a message with a public key.\n\n\"PGP Decrypt\" using the private key decrypt a message encrypted with a public key.\n\n\"PGP Sign\" sign a message with a single private key.\n\n\"PGP Verify\" verify a message signed by a single private key with the corresponding public key.\n\n\"PGP Generate\" create a new public-private key pair.\n\n\"PGP Lock\" lock the private key with a new passphrase.",
+    "sa_node_version": 14
+}
