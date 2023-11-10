@@ -1,4 +1,4 @@
-function(properties, context) {
+async function(properties, context) {
     
     // Instantiate library
 	const openpgp = require('openpgp');
@@ -43,16 +43,9 @@ function(properties, context) {
             return openpgp.verify(options);
         }
     )
-    .then(bundle => { return bundle.signatures[0].verified; })
-    .catch(reason => { return null; });
-    
-    // Extract from chain
-    const verified = context.async(
-        callback => verifypromise
-        .then(response => callback(null, response))
-        .catch(reason => callback(reason))
-    );
+    .then((bundle) => { return bundle.signatures[0].verified; })
+	.then((verified) => { return { verified: verified }; });
     
 	// Send
-	return { verified: verified };
+	return verifypromise;
 }

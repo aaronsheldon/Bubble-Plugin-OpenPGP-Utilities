@@ -1,4 +1,4 @@
-function(properties, context) {
+async function(properties, context) {
     
     // Instantiate library
 	const openpgp = require('openpgp');
@@ -38,16 +38,16 @@ function(properties, context) {
     if (properties.expires != null) { options.keyExpirationTime = Math.max(0, properties.expires); }
     
     // Generate pair
-    const pairpromise = openpgp.generateKey(options);
-    const pair = context.async(
-        callback => pairpromise
-        .then(response => callback(null, response))
-        .catch(reason => callback(reason))
+    const pairpromise = openpgp.generateKey(options)
+    .then(
+    	(pair) => {
+        	return {
+                publickey: pair.publicKey,
+                privatekey: pair.privateKey
+            };
+        }
     );
     
 	// Send
-	return {
-        publickey: pair.publicKey,
-        privatekey: pair.privateKey
-    };
+	return pairpromise;
 }

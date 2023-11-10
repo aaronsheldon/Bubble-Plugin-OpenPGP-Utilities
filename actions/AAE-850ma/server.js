@@ -1,4 +1,4 @@
-function(properties, context) {
+async function(properties, context) {
     
     // Instantiate library
 	const openpgp = require('openpgp');
@@ -29,7 +29,7 @@ function(properties, context) {
     const messagepromise = openpgp.createMessage(messageoptions);
     const keypromise = openpgp.readPrivateKey({ armoredKey: properties.signingkey })
     .then(
-        key => {
+        (key) => {
             const options = {
                 privateKey: key,
                 passphrase: properties.passphrase
@@ -50,15 +50,8 @@ function(properties, context) {
             return openpgp.sign(options);
         }
     )
-    .catch(reason => { return null; });
-    
-    // Extract from chain
-    const signature = context.async(
-        callback => signpromise
-        .then(response => callback(null, response))
-        .catch(reason => callback(reason))
-    );
+	.then((signature) => { return { signature: signature }; });
     
 	// Send
-	return { signature: signature };
+	return signpromise;
 }

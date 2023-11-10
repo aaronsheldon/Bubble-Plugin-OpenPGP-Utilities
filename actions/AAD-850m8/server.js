@@ -1,4 +1,4 @@
-function(properties, context) {
+async function(properties, context) {
     
     // Instantiate library
 	const openpgp = require('openpgp');
@@ -41,7 +41,7 @@ function(properties, context) {
     const encryptpromise = openpgp.readMessage(messageoptions);
 	const privatepromise = openpgp.readPrivateKey({ armoredKey: properties.decryptionkey })
     .then(
-        key => {
+        (key) => {
             const options = {
                 privateKey: key,
                 passphrase: properties.passphrase
@@ -66,16 +66,15 @@ function(properties, context) {
                 if (properties.date != null) { options.date = properties.date; }
                 return openpgp.decrypt(options);
             }
-        );
-        const verifypromise = decryptpromise
-        .then(bundle => { return bundle.signatures[0].verified; })
-        .catch(reason => { return null; });
-        
-        // Extract from chain
-        verified = context.async(
-            callback => verifypromise
-            .then(response => callback(null, response))
-            .catch(reason => callback(reason))
+        )
+        .then(
+        	(bundle) => {
+            	return {
+                	message: properties.base64 ? Buffer.from(bundle.data).toString("base64") : bundle.data,
+                    filename: bundle.filename,
+                    verified: bundle.signatures[0].verified
+                };
+            }
         );
     }
     
@@ -92,33 +91,18 @@ function(properties, context) {
                 };
                 return openpgp.decrypt(options);
             }
+        )
+        .then(
+        	(bundle) => {
+            	return {
+                	message: properties.base64 ? Buffer.from(bundle.data).toString("base64") : bundle.data,
+                    filename: bundle.filename,
+                    verified: null
+                };
+            }
         );
     }
     
-    // Shared ending
-	const messagepromise = decryptpromise
-    .then(bundle => { return bundle.data; })
-    .catch(reason => { return null; });
-    const filepromise = decryptpromise
-    .then(bundle => { return bundle.filename; })
-    .catch(reason => { return null; });
-    
-    // Extract from chain
-    const message = context.async(
-        callback => messagepromise
-        .then(response => callback(null, response))
-        .catch(reason => callback(reason))
-    );
-    const filename = context.async(
-        callback => filepromise
-        .then(response => callback(null, response))
-        .catch(reason => callback(reason))
-    );
-    
 	// Send
-	return {
-        message: properties.base64 ? Buffer.from(message).toString("base64") : message,
-        verified: verified,
-        filename: filename
-    };
+	return decryptpromise;
 }

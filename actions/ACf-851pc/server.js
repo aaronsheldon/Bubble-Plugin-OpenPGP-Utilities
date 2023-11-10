@@ -1,4 +1,4 @@
-function(properties, context) {
+async function(properties, context) {
     
     // Instantiate library
 	const openpgp = require('openpgp');
@@ -33,15 +33,9 @@ function(properties, context) {
             };
             return openpgp.encryptKey(options);
         }
-    );
-    
-    // Extract from chain
-    const lockedkey = context.async(
-        callback => lockpromise
-        .then(response => callback(null, response))
-        .catch(reason => callback(reason))
-    );
+    )
+    .then((key) => { return { lockedkey: key }; });
     
 	// Send
-	return { lockedkey: lockedkey };
+	return lockpromise;
 }

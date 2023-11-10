@@ -1,4 +1,4 @@
-function(properties, context) {
+async function(properties, context) {
     
     // Instantiate library
 	const openpgp = require('openpgp');
@@ -32,7 +32,7 @@ function(properties, context) {
     if ((properties.signingkey != null) && (properties.passphrase != null)) {
         const privatepromise = openpgp.readPrivateKey({ armoredKey: properties.signingkey })
         .then(
-            key => {
+            (key) => {
                 const options = {
                     privateKey: key,
                     passphrase: properties.passphrase
@@ -53,7 +53,7 @@ function(properties, context) {
                 return openpgp.encrypt(options);
             }
         )
-        .catch(reason => { return null; });
+        .then((encrypted) => { return { message: properties.base64 ? Buffer.from(encrypted).toString("base64") : encrypted }; });
     }
     
     // Do not sign
@@ -69,16 +69,9 @@ function(properties, context) {
                 return openpgp.encrypt(options);
             }
         )
-        .catch(reason => { return null; });        
+        .then((encrypted) => { return { message: properties.base64 ? Buffer.from(encrypted).toString("base64") : encrypted }; });        
     }
     
-    // Extract from chain
-    const encrypted = context.async(
-        callback => encryptpromise
-        .then(response => callback(null, response))
-        .catch(reason => callback(reason))
-    );
-    
 	// Send
-    return { message: properties.base64 ? Buffer.from(encrypted).toString("base64") : encrypted}
+    return encryptpromise;
 }
